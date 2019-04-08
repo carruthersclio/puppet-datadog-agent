@@ -4,3 +4,7 @@ mod 'puppetlabs-concat', '4.0.0'
 mod 'puppetlabs-puppetserver_gem', '1.0.0'
 mod 'puppetlabs-ruby', '1.0.0'
 mod 'puppetlabs-stdlib', '4.24.0'
+
+mod 'datadog-datadog_agent',
+    git: 'https://github.com/carruthersclio/puppet-datadog-agent',
+    branch: 'redis-ssl-support'
