@@ -6,10 +6,10 @@ instances:
 <% @_ports.each do |port| -%>
   - host: <%= @host %>
     port: <%= port %>
-<% if @ssl_enabled %>
-    ssl: True
-    <% unless @ssl_ca_certs.empty? %>
-    ssl_ca_certs: <%= @ssl_certs -%>
+<% if @ssl_enabled -%>
+    ssl: true
+    <%- unless @ssl_ca_certs.empty? -%>
+    ssl_ca_certs: <%= @ssl_ca_certs -%>
     <% end -%>
     <% unless @ssl_certfile.empty? %>
     ssl_certfile: <%= @ssl_certfile -%>
@@ -20,7 +20,7 @@ instances:
     <% unless @ssl_keyfile.empty? %>
     ssl_keyfile: <%= @ssl_keyfile -%>
     <% end -%>
-<% end -%>
+<% end %>
     warn_on_missing_keys: <%= @warn_on_missing_keys %>
     command_stats: <%= @command_stats %>
     <% if @password.empty? %># <%end %>password: <%= @password %>
