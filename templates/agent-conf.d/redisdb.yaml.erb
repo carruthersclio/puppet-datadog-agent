@@ -8,19 +8,19 @@ instances:
     port: <%= port %>
 <% if @ssl_enabled %>
     ssl: True
-    <% if @ssl_ca_certs %>
-    ssl_ca_certs: <%= @ssl_certs %>
-    <% end %>
-    <% if @ssl_certfile%>
-    ssl_certfile: <%= @ssl_certfile %>
-    <% end %>
-    <% if @ssl_cert_reqs %>
-    ssl_cert_reqs: <%= @ssl_cert_reqs %>
-    <% end %>
-    <% if @ssl_keyfile %>
-    ssl_keyfile: <%= @ssl_keyfile %>
-    <% end %>
-<% end %>
+    <% unless @ssl_ca_certs.empty? %>
+    ssl_ca_certs: <%= @ssl_certs -%>
+    <% end -%>
+    <% unless @ssl_certfile.empty? %>
+    ssl_certfile: <%= @ssl_certfile -%>
+    <% end -%>
+    <% unless @ssl_cert_reqs.empty? %>
+    ssl_cert_reqs: <%= @ssl_cert_reqs -%>
+    <% end -%>
+    <% unless @ssl_keyfile.empty? %>
+    ssl_keyfile: <%= @ssl_keyfile -%>
+    <% end -%>
+<% end -%>
     warn_on_missing_keys: <%= @warn_on_missing_keys %>
     command_stats: <%= @command_stats %>
     <% if @password.empty? %># <%end %>password: <%= @password %>
